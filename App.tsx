@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import BottomSheet, { TouchableOpacity } from '@gorhom/bottom-sheet';
+import BottomSheet, { BottomSheetTextInput, TouchableOpacity } from '@gorhom/bottom-sheet';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { GestureHandlerRootView, TextInput } from 'react-native-gesture-handler';
 import {useRef, useMemo, useCallback} from 'react'
@@ -20,25 +20,28 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <View style={styles.container}>
-
-        <TouchableOpacity style={styles.botaoAdicionar} onPress={handleOpenPress}>
-          <Icon name="plus" size={25}/>
+     
+        <TouchableOpacity style={styles.botaoAdicionar} onPress={handleOpenPress} >
+            <Icon name="plus" size={25}/>
         </TouchableOpacity>
+  
           <BottomSheet
               ref={bottomSheetRef}
               index={1}
               snapPoints={snapPoints}
               enablePanDownToClose={true}
               >
-              <View style={styles.contentContainer}>
-
-              
-              <TextInput style={styles.contentContainer} placeholder='Escreva a nova Tarefa.'> </TextInput>
-              <Button title="Fechar" onPress={handleCloseAction} />
-            </View>
+            
+            <BottomSheetTextInput style={styles.input} placeholder='Escreva aqui a nova tarefa' />
+            
+        <View style={styles.contentContainer}>
+          <Button title="Salvar" onPress={handleCloseAction} />
+        </View>
           </BottomSheet>
-      </View>
+        </View>
+
     </GestureHandlerRootView>
+    
   );
 }
 
@@ -54,9 +57,23 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
   },
   botaoAdicionar:{
-    flex:1,
     alignItems: 'flex-end',
     padding: 20,
+    marginLeft: 260,
+    marginTop: 20,
+    backgroundColor: "white",
+    borderRadius: 20
+  },
+  input: {
+    marginTop: 8,
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 10,
+    borderRadius: 10,
+    fontSize: 16,
+    lineHeight: 20,
+    padding: 8,
+    backgroundColor: 'rgba(151, 151, 151, 0.25)',
   },
   entrada:{
     flex:1,
