@@ -1,19 +1,19 @@
-import { Text, View, TouchableOpacity } from 'react-native'
-import { styles } from './style'
-import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/AntDesign'
-import {useRef, useMemo, useCallback} from 'react'
-import BottomSheet from '@gorhom/bottom-sheet';
+import React from 'react';
+import { View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
+import { styles } from './style';
 
-export function Header(){
-    const bottomSheetRef = useRef<BottomSheet>(null);
-    const handleOpenPress = () => bottomSheetRef.current?.expand();
-
-    return( 
-    <View style={styles.headerContainer}>
-
-        <TouchableOpacity style={styles.botaoAdicionar} onPress={handleOpenPress} >
-            <Icon name="plus" size={25}/>
+export function Header({ onOpenPress }) {
+    const handlePress = () => {
+      onOpenPress();
+    };
+  
+    return (
+      <View style={styles.headerContainer}>
+        <TouchableOpacity style={styles.botaoAdicionar} onPress={handlePress}>
+          <Icon name="plus" size={25} />
         </TouchableOpacity>
-    </View>)
-}
+      </View>
+    );
+  }
+  

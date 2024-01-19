@@ -2,9 +2,11 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     headerContainer:{
+        flexDirection: 'row', 
         alignItems: 'flex-start',
-        justifyContent: 'center',
-        backgroundColor: '2e2e2e' 
+        justifyContent: 'flex-start',
+        backgroundColor: '2e2e2e',
+        paddingTop: 20,
     },
     botaoAdicionar:{
         alignItems: 'flex-end',
