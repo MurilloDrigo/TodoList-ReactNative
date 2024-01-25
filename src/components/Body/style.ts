@@ -2,21 +2,42 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     bodyContainer:{
-        width: '100%',
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        backgroundColor: '2e2e2e',
+        backgroundColor: '#FFF',
     },
     itemList:{
-        width: 1000,
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        backgroundColor: 'white'
+        flexDirection:'row',
+        padding:10,
+        display:'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: '#0C082D',
+        borderWidth: 1,
+        borderColor: 'white',
+        
+    },
+    itemIcon:{
+        display:'flex',
+        backgroundColor:'#9900FF'
+        
     },
     item:{
-        width: 1000,
-        alignItems: 'flex-start',
+        color:'white',
+        fontSize:30,
+        backgroundColor:'#0C082D',
+        fontFamily:'Marker Felt',
+        
+
+    },
+    tituloTarefa:{
+        width: '100%',
+        alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'white',
+        backgroundColor: '#0C082D',
+        color: 'white',
+        fontSize:30,
+        fontFamily:'Marker Felt',
+        borderTopWidth:2,
+        borderBlockColor:'yellow'
+
     }
 })

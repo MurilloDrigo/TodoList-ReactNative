@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
     contentContainer:{
         alignItems: 'flex-start',
         justifyContent: 'center',
-        backgroundColor: '2e2e2e' 
     },
     input: {
         marginTop: 8,
@@ -16,5 +15,7 @@ export const styles = StyleSheet.create({
         lineHeight: 20,
         padding: 8,
         backgroundColor: 'rgba(151, 151, 151, 0.25)',
-      }
+      },
+    bottomSheet:{
+    }
 })

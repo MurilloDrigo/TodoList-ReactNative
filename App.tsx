@@ -22,7 +22,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={styles.container}>
         <Header onOpenPress={handleOpenPress} />
-        <Body tarefas={tarefas} excluir={excluiTarefa}/>
+        <Body tarefas={tarefas} setTarefas = {setTarefas}/>
         <FormTarefa onCloseAction={handleCloseAction} bottomSheetRef={bottomSheetRef}
         setTarefas = {setTarefas} />
       </View>
@@ -33,7 +33,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
-    backgroundColor: 'grey',
+    backgroundColor: '#333333',
   },
 });

@@ -8,6 +8,7 @@ export function FormTarefa({ bottomSheetRef, onCloseAction, setTarefas }) {
   const handleSalvarPress = () => {
     setTarefas(prev=>{
       return [...prev,tarefa]
+      
     })
     Keyboard.dismiss();
     onCloseAction();
@@ -16,7 +17,7 @@ export function FormTarefa({ bottomSheetRef, onCloseAction, setTarefas }) {
   };
 
   return (
-      <BottomSheet ref={bottomSheetRef} index={1} snapPoints={['25%', '50%']} enablePanDownToClose={true}>
+      <BottomSheet style={styles.bottomSheet} ref={bottomSheetRef} index={1} snapPoints={['40%', '18%']} enablePanDownToClose={true}>
         <BottomSheetTextInput id="inputTarefa" style={styles.input} placeholder="Escreva aqui a nova tarefa" value={tarefa} onChangeText={txt => setTarefa(txt)} />
           <Button title="Salvar" onPress={handleSalvarPress} />
       </BottomSheet>
